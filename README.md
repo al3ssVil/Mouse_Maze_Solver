@@ -19,21 +19,20 @@ There are no external dependencies, and it can be compiled and run on any system
 
 The file `date.txt` should have the following format:
 
-    
-    n m 
+    m_rows m_column 
     matrix[0][0] matrix[0][1] ... matrix[0][m-1] 
     matrix[1][0] matrix[1][1] ... matrix[1][m-1] 
     ... 
     matrix[n-1][0] matrix[n-1][1] ... matrix[n-1][m-1] 
-    soarece_x soarece_y 
-    branza_x branza_y
+    m_mouse.x m_mouse.y 
+    m_cheese.x, m_cheese.y
     
   Where:
-- `n` is the number of rows of the matrix.
-- `m` is the number of columns of the matrix.
+- `m_rows` is the number of rows of the matrix.
+- `m_column` is the number of columns of the matrix.
 - `matrix[i][j]` represents each cell in the maze.
-- `soarece_x, soarece_y` is the position of the mouse.
-- `branza_x, branza_y` is the position of the cheese.
+- `m_mouse.x, m_mouse.y` is the position of the mouse.
+- `m_cheese.x, m_cheese.y` is the position of the cheese.
 
 Example of `date.txt`:
 
@@ -52,12 +51,12 @@ Where:
 
 3. **Output**: If the mouse can reach the cheese, the program prints the entire path from the mouse's starting position to the cheese's position. If the mouse cannot reach the cheese, it will display the message:
     ```
-    Nu se poate ajunge la branza
+    The cheese cannot be reached.
     ```
 
     If the path is found, the program will output the coordinates of each step, starting from the cheese's position and tracing the path back to the mouse's position:
     ```
-    Drumul este
+   The path is:
     1 3
     1 4
     2 4
@@ -65,11 +64,6 @@ Where:
     3 5
     4 5
     4 4
-    ```
-
-4. **Error Handling**: If the mouse cannot reach the cheese, the program will output:
-    ```
-    Nu se poate ajunge la branza
     ```
 
 ## How It Works
